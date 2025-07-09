@@ -1,8 +1,10 @@
 'use client'
 import { useEffect, useState } from "react";
-import { adminName } from "../(home)/admin/page";
+// import { adminName } from "/page";
 import { students } from "./list";
 import Link from "next/link";
+// import { adminName } from "../(home)/admin/page";
+import adminName from "../Name";
 const Result = () => {
 
     const [classFound, setClassFound] = useState('')

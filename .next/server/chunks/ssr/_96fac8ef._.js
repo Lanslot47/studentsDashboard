@@ -120,7 +120,7 @@ const students = [
     }
 ];
 }}),
-"[project]/app/(home)/admin/page.tsx [app-ssr] (ecmascript)": ((__turbopack_context__) => {
+"[project]/app/Name.tsx [app-ssr] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
 var { g: global, __dirname } = __turbopack_context__;
@@ -128,106 +128,8 @@ var { g: global, __dirname } = __turbopack_context__;
 __turbopack_context__.s({
     "default": (()=>__TURBOPACK__default__export__)
 });
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$demo$2f$list$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/demo/list.tsx [app-ssr] (ecmascript)");
-'use client';
-;
-;
-;
-;
 const adminName = 'Ishaq';
-const AdminPage = ()=>{
-    const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRouter"])();
-    const [studentId, setStudentId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
-    const [admin, setAdmin] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
-    const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
-    const [studentName, setStudentName] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
-    const handleAdmin = (e)=>{
-        e.preventDefault();
-        let found = __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$demo$2f$list$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["students"].map((std)=>std);
-        let adminKey = 'Password';
-        if (adminKey == studentId && adminName == studentName) {
-            setAdmin(found);
-            setError('');
-            router.push('../demo');
-        } else {
-            setError('Enter correct Password');
-        }
-    };
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            id: "div",
-            className: "max-w-md h-full p-6 bg-red-300",
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                    className: "text-2xl font-bold mb-4",
-                    children: "Enter Admin Key"
-                }, void 0, false, {
-                    fileName: "[project]/app/(home)/admin/page.tsx",
-                    lineNumber: 30,
-                    columnNumber: 17
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
-                    onSubmit: handleAdmin,
-                    className: "space-y-4",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                            type: "text",
-                            id: "one",
-                            placeholder: "Enter Username",
-                            value: studentName,
-                            onChange: (e)=>setStudentName(e.target.value),
-                            className: "w-full p-2 border rounded"
-                        }, void 0, false, {
-                            fileName: "[project]/app/(home)/admin/page.tsx",
-                            lineNumber: 34,
-                            columnNumber: 21
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                            type: "password",
-                            placeholder: "Enter your id",
-                            value: studentId,
-                            onChange: (e)=>setStudentId(e.target.value),
-                            className: "w-full p-2 border rounded"
-                        }, void 0, false, {
-                            fileName: "[project]/app/(home)/admin/page.tsx",
-                            lineNumber: 35,
-                            columnNumber: 21
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            type: "submit",
-                            className: "w-full text-white p-2 rounded hover:bg-blue-700",
-                            children: "View Info"
-                        }, void 0, false, {
-                            fileName: "[project]/app/(home)/admin/page.tsx",
-                            lineNumber: 36,
-                            columnNumber: 21
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/app/(home)/admin/page.tsx",
-                    lineNumber: 33,
-                    columnNumber: 17
-                }, this),
-                error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                    className: "text-blue-500 font-bold text-1xl",
-                    children: error
-                }, void 0, false, {
-                    fileName: "[project]/app/(home)/admin/page.tsx",
-                    lineNumber: 38,
-                    columnNumber: 27
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "[project]/app/(home)/admin/page.tsx",
-            lineNumber: 29,
-            columnNumber: 13
-        }, this)
-    }, void 0, false);
-};
-const __TURBOPACK__default__export__ = AdminPage;
+const __TURBOPACK__default__export__ = adminName;
 }}),
 "[project]/app/demo/page.tsx [app-ssr] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
@@ -241,7 +143,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 // import { adminName } from "/page";
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$demo$2f$list$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/demo/list.tsx [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$home$292f$admin$2f$page$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/(home)/admin/page.tsx [app-ssr] (ecmascript)");
+// import { adminName } from "../(home)/admin/page";
+var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Name$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/Name.tsx [app-ssr] (ecmascript)");
 'use client';
 ;
 ;
@@ -263,25 +166,25 @@ const Result = ()=>{
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         children: [
-            __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$home$292f$admin$2f$page$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["adminName"] && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+            __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Name$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"] && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                 className: "text-black text-center",
                 children: [
                     "Hello ",
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                         className: "text-gray-500 text-serif font-bold text-xl",
                         children: [
-                            __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$home$292f$admin$2f$page$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["adminName"],
+                            __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Name$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"],
                             ","
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/demo/page.tsx",
-                        lineNumber: 25,
+                        lineNumber: 26,
                         columnNumber: 71
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/demo/page.tsx",
-                lineNumber: 25,
+                lineNumber: 26,
                 columnNumber: 27
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -296,7 +199,7 @@ const Result = ()=>{
                             onChange: (e)=>setClassFound(e.target.value)
                         }, void 0, false, {
                             fileName: "[project]/app/demo/page.tsx",
-                            lineNumber: 28,
+                            lineNumber: 29,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -304,7 +207,7 @@ const Result = ()=>{
                             children: "View student"
                         }, void 0, false, {
                             fileName: "[project]/app/demo/page.tsx",
-                            lineNumber: 29,
+                            lineNumber: 30,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -314,32 +217,32 @@ const Result = ()=>{
                                         children: admin.name
                                     }, void 0, false, {
                                         fileName: "[project]/app/demo/page.tsx",
-                                        lineNumber: 36,
+                                        lineNumber: 37,
                                         columnNumber: 37
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: admin.class
                                     }, void 0, false, {
                                         fileName: "[project]/app/demo/page.tsx",
-                                        lineNumber: 37,
+                                        lineNumber: 38,
                                         columnNumber: 37
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: admin.id
                                     }, void 0, false, {
                                         fileName: "[project]/app/demo/page.tsx",
-                                        lineNumber: 38,
+                                        lineNumber: 39,
                                         columnNumber: 37
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/demo/page.tsx",
-                                lineNumber: 35,
+                                lineNumber: 36,
                                 columnNumber: 33
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/demo/page.tsx",
-                            lineNumber: 32,
+                            lineNumber: 33,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -348,31 +251,31 @@ const Result = ()=>{
                                     children: classErr
                                 }, void 0, false, {
                                     fileName: "[project]/app/demo/page.tsx",
-                                    lineNumber: 46,
+                                    lineNumber: 47,
                                     columnNumber: 41
                                 }, this),
                                 " "
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/demo/page.tsx",
-                            lineNumber: 44,
+                            lineNumber: 45,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/demo/page.tsx",
-                    lineNumber: 27,
+                    lineNumber: 28,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/demo/page.tsx",
-                lineNumber: 26,
+                lineNumber: 27,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/demo/page.tsx",
-        lineNumber: 24,
+        lineNumber: 25,
         columnNumber: 9
     }, this);
 };
@@ -387,13 +290,7 @@ var { g: global, __dirname, m: module, e: exports } = __turbopack_context__;
 "use strict";
 module.exports = __turbopack_context__.r("[project]/node_modules/next/dist/server/route-modules/app-page/module.compiled.js [app-ssr] (ecmascript)").vendored['react-ssr'].ReactJsxDevRuntime; //# sourceMappingURL=react-jsx-dev-runtime.js.map
 }}),
-"[project]/node_modules/next/navigation.js [app-ssr] (ecmascript)": (function(__turbopack_context__) {
-
-var { g: global, __dirname, m: module, e: exports } = __turbopack_context__;
-{
-module.exports = __turbopack_context__.r("[project]/node_modules/next/dist/client/components/navigation.js [app-ssr] (ecmascript)");
-}}),
 
 };
 
-//# sourceMappingURL=_51858928._.js.map
+//# sourceMappingURL=_96fac8ef._.js.map

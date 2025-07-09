@@ -2,7 +2,8 @@
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { students } from "@/app/demo/list";
-export const adminName = 'Ishaq';
+//  const adminName = 'Ishaq';
+import adminName from "@/app/Name";
 const AdminPage = () => {
     const router = useRouter();
     const [studentId, setStudentId] = useState('');

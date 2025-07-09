@@ -1,5 +1,6 @@
 {
   "/(home)/admin/page": "app/(home)/admin/page.js",
+  "/(home)/student/page": "app/(home)/student/page.js",
   "/demo/page": "app/demo/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/page": "app/page.js"

@@ -129,7 +129,6 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
 {
 __turbopack_context__.s({
-    "adminName": (()=>adminName),
     "default": (()=>__TURBOPACK__default__export__)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
@@ -256,8 +255,9 @@ __turbopack_context__.s({
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$home$292f$admin$2f$page$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/(home)/admin/page.tsx [app-client] (ecmascript)");
+// import { adminName } from "/page";
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$demo$2f$list$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/demo/list.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$home$292f$admin$2f$page$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/(home)/admin/page.tsx [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 'use client';
@@ -293,13 +293,13 @@ const Result = ()=>{
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/demo/page.tsx",
-                        lineNumber: 24,
+                        lineNumber: 25,
                         columnNumber: 71
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/demo/page.tsx",
-                lineNumber: 24,
+                lineNumber: 25,
                 columnNumber: 27
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -314,7 +314,7 @@ const Result = ()=>{
                             onChange: (e)=>setClassFound(e.target.value)
                         }, void 0, false, {
                             fileName: "[project]/app/demo/page.tsx",
-                            lineNumber: 27,
+                            lineNumber: 28,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -322,7 +322,7 @@ const Result = ()=>{
                             children: "View student"
                         }, void 0, false, {
                             fileName: "[project]/app/demo/page.tsx",
-                            lineNumber: 28,
+                            lineNumber: 29,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -332,32 +332,32 @@ const Result = ()=>{
                                         children: admin.name
                                     }, void 0, false, {
                                         fileName: "[project]/app/demo/page.tsx",
-                                        lineNumber: 35,
+                                        lineNumber: 36,
                                         columnNumber: 37
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: admin.class
                                     }, void 0, false, {
                                         fileName: "[project]/app/demo/page.tsx",
-                                        lineNumber: 36,
+                                        lineNumber: 37,
                                         columnNumber: 37
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: admin.id
                                     }, void 0, false, {
                                         fileName: "[project]/app/demo/page.tsx",
-                                        lineNumber: 37,
+                                        lineNumber: 38,
                                         columnNumber: 37
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/demo/page.tsx",
-                                lineNumber: 34,
+                                lineNumber: 35,
                                 columnNumber: 33
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/demo/page.tsx",
-                            lineNumber: 31,
+                            lineNumber: 32,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -366,38 +366,40 @@ const Result = ()=>{
                                     children: classErr
                                 }, void 0, false, {
                                     fileName: "[project]/app/demo/page.tsx",
-                                    lineNumber: 45,
+                                    lineNumber: 46,
                                     columnNumber: 41
                                 }, this),
                                 " "
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/demo/page.tsx",
-                            lineNumber: 43,
+                            lineNumber: 44,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/demo/page.tsx",
-                    lineNumber: 26,
+                    lineNumber: 27,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/demo/page.tsx",
-                lineNumber: 25,
+                lineNumber: 26,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/demo/page.tsx",
-        lineNumber: 23,
+        lineNumber: 24,
         columnNumber: 9
     }, this);
 };
 _s(Result, "uyRKUZS+y311hrn9StoBrXuw3Bg=");
 _c = Result;
 const __TURBOPACK__default__export__ = Result;
-{}var _c;
+{} // appright
+ // firebase
+var _c;
 __turbopack_context__.k.register(_c, "Result");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);

@@ -123,6 +123,20 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }
 }}),
+"[project]/app/Name.tsx [app-client] (ecmascript)": ((__turbopack_context__) => {
+"use strict";
+
+var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
+{
+__turbopack_context__.s({
+    "default": (()=>__TURBOPACK__default__export__)
+});
+const adminName = 'Ishaq';
+const __TURBOPACK__default__export__ = adminName;
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
+}
+}}),
 "[project]/app/(home)/admin/page.tsx [app-client] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
@@ -135,13 +149,15 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$demo$2f$list$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/demo/list.tsx [app-client] (ecmascript)");
+//  const adminName = 'Ishaq';
+var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Name$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/Name.tsx [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 'use client';
 ;
 ;
 ;
-const adminName = 'Ishaq';
+;
 const AdminPage = ()=>{
     _s();
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
@@ -153,7 +169,7 @@ const AdminPage = ()=>{
         e.preventDefault();
         let found = __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$demo$2f$list$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["students"].map((std)=>std);
         let adminKey = 'Password';
-        if (adminKey == studentId && adminName == studentName) {
+        if (adminKey == studentId && __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Name$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"] == studentName) {
             setAdmin(found);
             setError('');
             router.push('../demo');
@@ -171,7 +187,7 @@ const AdminPage = ()=>{
                     children: "Enter Admin Key"
                 }, void 0, false, {
                     fileName: "[project]/app/(home)/admin/page.tsx",
-                    lineNumber: 30,
+                    lineNumber: 31,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -187,7 +203,7 @@ const AdminPage = ()=>{
                             className: "w-full p-2 border rounded"
                         }, void 0, false, {
                             fileName: "[project]/app/(home)/admin/page.tsx",
-                            lineNumber: 34,
+                            lineNumber: 35,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -198,7 +214,7 @@ const AdminPage = ()=>{
                             className: "w-full p-2 border rounded"
                         }, void 0, false, {
                             fileName: "[project]/app/(home)/admin/page.tsx",
-                            lineNumber: 35,
+                            lineNumber: 36,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -207,13 +223,13 @@ const AdminPage = ()=>{
                             children: "View Info"
                         }, void 0, false, {
                             fileName: "[project]/app/(home)/admin/page.tsx",
-                            lineNumber: 36,
+                            lineNumber: 37,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/(home)/admin/page.tsx",
-                    lineNumber: 33,
+                    lineNumber: 34,
                     columnNumber: 17
                 }, this),
                 error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -221,13 +237,13 @@ const AdminPage = ()=>{
                     children: error
                 }, void 0, false, {
                     fileName: "[project]/app/(home)/admin/page.tsx",
-                    lineNumber: 38,
+                    lineNumber: 39,
                     columnNumber: 27
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/(home)/admin/page.tsx",
-            lineNumber: 29,
+            lineNumber: 30,
             columnNumber: 13
         }, this)
     }, void 0, false);
@@ -473,4 +489,4 @@ module.exports = __turbopack_context__.r("[project]/node_modules/next/dist/clien
 }}),
 }]);
 
-//# sourceMappingURL=_66686349._.js.map
+//# sourceMappingURL=_7a15c111._.js.map
