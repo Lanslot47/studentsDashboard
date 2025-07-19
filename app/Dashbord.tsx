@@ -1,10 +1,11 @@
-import { School2 } from "lucide-react";
-import { PictureInPictureIcon } from "lucide-react";
-import { Badge } from "lucide-react";
 import Link from "next/link";
+import { PiStudent } from "react-icons/pi";
+import { MdAdminPanelSettings } from "react-icons/md";
+import { RiAdminFill } from "react-icons/ri";
+import { RiAdminLine } from "react-icons/ri";
 const list = [
-    {id:1, title:'Student', url:'../student', icon:<Badge/>},
-    {id:2, title:'Admin',url:'./admin', icon:<PictureInPictureIcon/>},
+    {id:1, title:'Student', url:'../student', icon:<PiStudent size={25}/>},
+    {id:2, title:'Admin',url:'./admin', icon:<RiAdminLine size={25}/>},
 ]
 const DashboardPage = () => {
     return (

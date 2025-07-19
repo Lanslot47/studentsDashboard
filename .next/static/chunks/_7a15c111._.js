@@ -136,6 +136,8 @@ const __TURBOPACK__default__export__ = adminName;
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }
+ // appright
+ // firebase
 }}),
 "[project]/app/(home)/admin/page.tsx [app-client] (ecmascript)": ((__turbopack_context__) => {
 "use strict";

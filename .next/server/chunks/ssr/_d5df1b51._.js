@@ -130,6 +130,8 @@ __turbopack_context__.s({
 });
 const adminName = 'ISHAQ';
 const __TURBOPACK__default__export__ = adminName;
+ // appright
+ // firebase
 }}),
 "[project]/app/(home)/admin/page.tsx [app-ssr] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
