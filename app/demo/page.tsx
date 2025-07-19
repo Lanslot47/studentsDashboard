@@ -1,79 +1,24 @@
 'use client'
-import { useEffect, useState } from "react";
-// import { adminName } from "/page";
+import { useState } from "react";
 import { students } from "./list";
-import Link from "next/link";
-// import { adminName } from "../(home)/admin/page";
 import adminName from "../Name";
 const Result = () => {
-
-    const [classFound, setClassFound] = useState('')
-    const [admin, setAdmin] = useState<null | typeof students[3]>(null);
-    const [classErr, setClassErr] = useState('')
-    const found = students.find((item) => item.class === classFound.trim());
-    const handleAdmin = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (found) {
-            setAdmin(found);
-            setClassErr('');
-        }
-        else {
-            setClassErr('Not found')
-        }
-    }
+    const [selectedClass, setSelectedClass] = useState("");
+    const filteredStudents = students.filter((student) => student.class.toLowerCase() === selectedClass.toLowerCase());
     return (
-        <div>
-            {adminName && <p className="text-black text-center">Hello <span className="text-gray-500 text-serif font-bold text-xl">{adminName},</span></p>}
-            <form className="" onSubmit={handleAdmin}>
-                <div className="flex items-center gap-3 px-4 py-6">
-                    <input type="text" value={classFound} onChange={(e) => setClassFound(e.target.value)} />
-                    <button className="hover:bg-blue-200">View student</button>
-                    {/* <Link href="">View Staff</Link>
-                    <Link href="">View everything</Link> */}
-                    <div>
-                        {
-                            admin && (
-                                <div>
-                                    <p>{admin.name}</p>
-                                    <p>{admin.class}</p>
-                                    <p>{admin.id}</p>
-                                </div>
-                            )
-
-                        }
-                    </div>
-                    <div>
-                        {
-                            classErr && <p>{classErr}</p>
-                        } </div>
-
-
-                </div>
-            </form>
+        <div className="p-6 h-full w-[85vw] rounded-sm shadow-sm">
+            <h1 className="flex gap-2 text-2xl">Hello<p className="font-bold">{adminName}</p></h1><br />
+            <div className="p-4">
+                <h1 className="text-xl">Search Students by Class</h1>
+                <input type="text" placeholder="Type Class(e.g., ss1)" className="border p-2 mb-4 w-full max-w-sm" value={selectedClass} onChange={(e) => setSelectedClass(e.target.value)} />
+                <ul className="list-disc ml-6">
+                    {filteredStudents.map((student, index) => (
+                        <li key={index}>{student.name} ({student.class})</li>
+                    ))}
+                </ul>
+            </div>
         </div>
-
     );
 }
 
 export default Result;
-{/* {
-                        students.map(list => (
-                            <span className="flex gap-2">
-                                <div>
-                                    <p>Name</p>
-                                    <p>{list.name}</p>
-                                </div>
-                                <div>
-                                    <p>ID</p>
-                                    <p className="">{list.id}</p>
-                                </div>
-                                <div>
-                                    <p>Class</p>
-                                    <p>{list.class}</p>
-                                </div>
-                            </span>
-                        ))
-} */}
-
-// appright
-// firebase

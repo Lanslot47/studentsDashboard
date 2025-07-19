@@ -13,110 +13,110 @@ const students = [
         id: '101',
         name: "Amina Yusuf",
         age: 15,
-        class: '1'
+        class: 'SS1'
     },
     {
         id: '102',
         name: "Ishaq Auwal",
         age: 14,
-        class: '1'
+        class: 'SS1'
     },
     {
         id: '103',
         name: "Sa'ad Yahya",
         age: 16,
-        class: '1'
+        class: 'SS1'
     },
     {
         id: '104',
         name: "Hussain Isa",
         age: 13,
-        class: '1'
+        class: 'SS1'
     },
     {
         id: '105',
         name: "Usman Dahir",
         age: 14,
-        class: '1'
+        class: 'SS1'
     },
     {
         id: '106',
         name: "Aliyu Tahir",
         age: 13,
-        class: '1'
+        class: 'SS1'
     },
     {
         id: '107',
         name: "Bahir Auwal",
         age: 14,
-        class: '1'
+        class: 'SS1'
     },
     {
         id: '108',
         name: "Sa'ad Yahya",
         age: 15,
-        class: '1'
+        class: 'SS1'
     },
     {
         id: '109',
         name: "Karimatu yur",
         age: 14,
-        class: '1'
+        class: 'SS1'
     },
     /////ss2
     {
         id: '110',
         name: "Abdulhalim Yusuf",
         age: 17,
-        class: '2'
+        class: 'SS2'
     },
     {
         id: '112',
         name: "Abdulmalik Salis",
         age: 15,
-        class: '2'
+        class: 'SS2'
     },
     {
         id: '113',
         name: "Hussain M Bello",
         age: 17,
-        class: '2'
+        class: 'SS2'
     },
     {
         id: '114',
         name: "Hassan M. Bello",
         age: 15,
-        class: '2'
+        class: 'SS2'
     },
     {
         id: '115',
         name: "Munib Sagir",
         age: 14,
-        class: '2'
+        class: 'SS2'
     },
     {
         id: '116',
         name: "Mukhtar Ibrahim",
         age: 15,
-        class: '2'
+        class: 'SS2'
     },
     {
         id: '117',
         name: "Ibrahim Sagir",
         age: 15,
-        class: '2'
+        class: 'SS2'
     },
     {
         id: '118',
         name: "Ibrahim Yahya",
         age: 17,
-        class: '2'
+        class: 'SS2'
     },
     {
         id: '119',
         name: "Aliyu Abdullahi",
         age: 16,
-        class: '2'
+        class: 'SS2'
     }
 ];
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
@@ -131,7 +131,7 @@ var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_
 __turbopack_context__.s({
     "default": (()=>__TURBOPACK__default__export__)
 });
-const adminName = 'Ishaq';
+const adminName = 'ISHAQ';
 const __TURBOPACK__default__export__ = adminName;
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
@@ -149,7 +149,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$demo$2f$list$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/demo/list.tsx [app-client] (ecmascript)");
-//  const adminName = 'Ishaq';
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Name$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/Name.tsx [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
@@ -174,13 +173,13 @@ const AdminPage = ()=>{
             setError('');
             router.push('../demo');
         } else {
-            setError('Enter correct Password');
+            setError('Enter correct UserName/Password');
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             id: "div",
-            className: "max-w-md h-full p-6 bg-red-300",
+            className: "max-w-md h-full p-4",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                     className: "text-2xl font-bold mb-4",
@@ -192,7 +191,7 @@ const AdminPage = ()=>{
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                     onSubmit: handleAdmin,
-                    className: "space-y-4",
+                    className: "space-y-4 ",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                             type: "text",
@@ -208,7 +207,7 @@ const AdminPage = ()=>{
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                             type: "password",
-                            placeholder: "Enter your id",
+                            placeholder: "Enter your Password",
                             value: studentId,
                             onChange: (e)=>setStudentId(e.target.value),
                             className: "w-full p-2 border rounded"
@@ -219,7 +218,7 @@ const AdminPage = ()=>{
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                             type: "submit",
-                            className: "w-full text-white p-2 rounded hover:bg-blue-700",
+                            className: "w-full text-white p-2 rounded bg-green-600 cursor-pointer",
                             children: "View Info"
                         }, void 0, false, {
                             fileName: "[project]/app/(home)/admin/page.tsx",

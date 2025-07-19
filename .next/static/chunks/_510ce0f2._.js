@@ -123,7 +123,7 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }
 }}),
-"[project]/app/(home)/student/page.tsx [app-client] (ecmascript)": ((__turbopack_context__) => {
+"[project]/app/demo/page.tsx [app-client] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
 var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
@@ -139,151 +139,83 @@ var _s = __turbopack_context__.k.signature();
 'use client';
 ;
 ;
-const StudentsPage = ()=>{
+const Result = ()=>{
     _s();
-    const [studentId, setStudentId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
-    const [student, setStudent] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
-    const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
-    const handleSubmit = (e)=>{
-        e.preventDefault();
-        const found = __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$demo$2f$list$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["students"].find((item)=>item.id === studentId.trim());
-        if (found) {
-            setStudent(found);
-            setError('');
-        } else {
-            setStudent(null);
-            setError('No student with ID');
-        }
-    };
+    const [selectedClass, setSelectedClass] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
+    const filteredStudents = __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$demo$2f$list$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["students"].filter((student)=>student.class.toLowerCase() === selectedClass.toLowerCase());
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "max-w-md  p-6",
+        className: "p-4 h-full w-[85vw] rounded-2xl shadow-xl",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                className: "text-2xl font-bold mb-4",
-                children: "Student access"
+                children: "Hello "
             }, void 0, false, {
-                fileName: "[project]/app/(home)/student/page.tsx",
-                lineNumber: 23,
+                fileName: "[project]/app/demo/page.tsx",
+                lineNumber: 10,
                 columnNumber: 13
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
-                onSubmit: handleSubmit,
-                className: "space-y-4",
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                        className: "text-xl",
+                        children: "Search Students by Class"
+                    }, void 0, false, {
+                        fileName: "[project]/app/demo/page.tsx",
+                        lineNumber: 12,
+                        columnNumber: 17
+                    }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                         type: "text",
-                        placeholder: "Enter your student id",
-                        value: studentId,
-                        onChange: (e)=>setStudentId(e.target.value),
-                        className: "w-full p-2 border rounded"
+                        placeholder: "Type Class(e.g., ss1)",
+                        className: "border p-2 mb-4 w-full max-w-sm",
+                        value: selectedClass,
+                        onChange: (e)=>setSelectedClass(e.target.value)
                     }, void 0, false, {
-                        fileName: "[project]/app/(home)/student/page.tsx",
-                        lineNumber: 27,
+                        fileName: "[project]/app/demo/page.tsx",
+                        lineNumber: 13,
                         columnNumber: 17
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                        type: "submit",
-                        className: "w-full bg-green-600 cursor-pointer text-white p-2 rounded hover:bg-green-700",
-                        children: "View Info"
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                        className: "list-disc ml-6",
+                        children: filteredStudents.map((student, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                children: [
+                                    student.name,
+                                    " (",
+                                    student.class,
+                                    ")"
+                                ]
+                            }, index, true, {
+                                fileName: "[project]/app/demo/page.tsx",
+                                lineNumber: 16,
+                                columnNumber: 25
+                            }, this))
                     }, void 0, false, {
-                        fileName: "[project]/app/(home)/student/page.tsx",
-                        lineNumber: 28,
+                        fileName: "[project]/app/demo/page.tsx",
+                        lineNumber: 14,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
-                fileName: "[project]/app/(home)/student/page.tsx",
-                lineNumber: 26,
+                fileName: "[project]/app/demo/page.tsx",
+                lineNumber: 11,
                 columnNumber: 13
-            }, this),
-            error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                className: "text=red-500 mt-4",
-                children: error
-            }, void 0, false, {
-                fileName: "[project]/app/(home)/student/page.tsx",
-                lineNumber: 30,
-                columnNumber: 23
-            }, this),
-            student && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "mt-6 p-4 border rounded bg-gray-100",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                        className: "text-xl font-bold mb-2",
-                        children: "Student Info"
-                    }, void 0, false, {
-                        fileName: "[project]/app/(home)/student/page.tsx",
-                        lineNumber: 33,
-                        columnNumber: 21
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                children: "Name: "
-                            }, void 0, false, {
-                                fileName: "[project]/app/(home)/student/page.tsx",
-                                lineNumber: 34,
-                                columnNumber: 24
-                            }, this),
-                            student.name
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/app/(home)/student/page.tsx",
-                        lineNumber: 34,
-                        columnNumber: 21
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                children: "Age: "
-                            }, void 0, false, {
-                                fileName: "[project]/app/(home)/student/page.tsx",
-                                lineNumber: 35,
-                                columnNumber: 24
-                            }, this),
-                            student.age
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/app/(home)/student/page.tsx",
-                        lineNumber: 35,
-                        columnNumber: 21
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                children: "Class: "
-                            }, void 0, false, {
-                                fileName: "[project]/app/(home)/student/page.tsx",
-                                lineNumber: 36,
-                                columnNumber: 24
-                            }, this),
-                            student.class
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/app/(home)/student/page.tsx",
-                        lineNumber: 36,
-                        columnNumber: 21
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/app/(home)/student/page.tsx",
-                lineNumber: 32,
-                columnNumber: 17
             }, this)
         ]
     }, void 0, true, {
-        fileName: "[project]/app/(home)/student/page.tsx",
-        lineNumber: 22,
+        fileName: "[project]/app/demo/page.tsx",
+        lineNumber: 9,
         columnNumber: 9
     }, this);
 };
-_s(StudentsPage, "bwIwt+/KnsqbRH/xd1qtaP6h+P8=");
-_c = StudentsPage;
-const __TURBOPACK__default__export__ = StudentsPage;
+_s(Result, "AVWkFGTBO+LCfzJ/GcyENeCEJTU=");
+_c = Result;
+const __TURBOPACK__default__export__ = Result;
 var _c;
-__turbopack_context__.k.register(_c, "StudentsPage");
+__turbopack_context__.k.register(_c, "Result");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }
+ // appright
+ // firebase
 }}),
 "[project]/node_modules/next/dist/compiled/react/cjs/react-jsx-dev-runtime.development.js [app-client] (ecmascript)": (function(__turbopack_context__) {
 
@@ -507,4 +439,4 @@ if ("TURBOPACK compile-time falsy", 0) {
 }}),
 }]);
 
-//# sourceMappingURL=_7be73a00._.js.map
+//# sourceMappingURL=_510ce0f2._.js.map

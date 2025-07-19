@@ -9,54 +9,11 @@ __turbopack_context__.s({
     "default": (()=>__TURBOPACK__default__export__)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
-(()=>{
-    const e = new Error("Cannot find module '../admin/page'");
-    e.code = 'MODULE_NOT_FOUND';
-    throw e;
-})();
 'use client';
 ;
-;
 const Result = ()=>{
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        children: [
-            adminName && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                className: "text-black text-center",
-                children: [
-                    "Hello ",
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                        className: "text-gray-500 text-serif font-bold text-xl",
-                        children: [
-                            adminName,
-                            ","
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/app/demo/page.tsx",
-                        lineNumber: 8,
-                        columnNumber: 71
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/app/demo/page.tsx",
-                lineNumber: 8,
-                columnNumber: 27
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "w-50 text-sm  "
-                }, void 0, false, {
-                    fileName: "[project]/app/demo/page.tsx",
-                    lineNumber: 10,
-                    columnNumber: 17
-                }, this)
-            }, void 0, false, {
-                fileName: "[project]/app/demo/page.tsx",
-                lineNumber: 9,
-                columnNumber: 13
-            }, this)
-        ]
-    }, void 0, true, {
+    alert(`Hello ${a}`);
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {}, void 0, false, {
         fileName: "[project]/app/demo/page.tsx",
         lineNumber: 7,
         columnNumber: 9
@@ -69,6 +26,8 @@ __turbopack_context__.k.register(_c, "Result");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }
+ // appright
+ // firebase
 }}),
 "[project]/node_modules/next/dist/compiled/react/cjs/react-jsx-dev-runtime.development.js [app-client] (ecmascript)": (function(__turbopack_context__) {
 

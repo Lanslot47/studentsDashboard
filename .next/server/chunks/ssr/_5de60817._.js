@@ -13,110 +13,110 @@ const students = [
         id: '101',
         name: "Amina Yusuf",
         age: 15,
-        class: '1'
+        class: 'SS1'
     },
     {
         id: '102',
         name: "Ishaq Auwal",
         age: 14,
-        class: '1'
+        class: 'SS1'
     },
     {
         id: '103',
         name: "Sa'ad Yahya",
         age: 16,
-        class: '1'
+        class: 'SS1'
     },
     {
         id: '104',
         name: "Hussain Isa",
         age: 13,
-        class: '1'
+        class: 'SS1'
     },
     {
         id: '105',
         name: "Usman Dahir",
         age: 14,
-        class: '1'
+        class: 'SS1'
     },
     {
         id: '106',
         name: "Aliyu Tahir",
         age: 13,
-        class: '1'
+        class: 'SS1'
     },
     {
         id: '107',
         name: "Bahir Auwal",
         age: 14,
-        class: '1'
+        class: 'SS1'
     },
     {
         id: '108',
         name: "Sa'ad Yahya",
         age: 15,
-        class: '1'
+        class: 'SS1'
     },
     {
         id: '109',
         name: "Karimatu yur",
         age: 14,
-        class: '1'
+        class: 'SS1'
     },
     /////ss2
     {
         id: '110',
         name: "Abdulhalim Yusuf",
         age: 17,
-        class: '2'
+        class: 'SS2'
     },
     {
         id: '112',
         name: "Abdulmalik Salis",
         age: 15,
-        class: '2'
+        class: 'SS2'
     },
     {
         id: '113',
         name: "Hussain M Bello",
         age: 17,
-        class: '2'
+        class: 'SS2'
     },
     {
         id: '114',
         name: "Hassan M. Bello",
         age: 15,
-        class: '2'
+        class: 'SS2'
     },
     {
         id: '115',
         name: "Munib Sagir",
         age: 14,
-        class: '2'
+        class: 'SS2'
     },
     {
         id: '116',
         name: "Mukhtar Ibrahim",
         age: 15,
-        class: '2'
+        class: 'SS2'
     },
     {
         id: '117',
         name: "Ibrahim Sagir",
         age: 15,
-        class: '2'
+        class: 'SS2'
     },
     {
         id: '118',
         name: "Ibrahim Yahya",
         age: 17,
-        class: '2'
+        class: 'SS2'
     },
     {
         id: '119',
         name: "Aliyu Abdullahi",
         age: 16,
-        class: '2'
+        class: 'SS2'
     }
 ];
 }}),
@@ -178,7 +178,7 @@ const StudentsPage = ()=>{
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         type: "submit",
-                        className: "w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700",
+                        className: "w-full bg-green-600 cursor-pointer text-white p-2 rounded hover:bg-green-700",
                         children: "View Info"
                     }, void 0, false, {
                         fileName: "[project]/app/(home)/student/page.tsx",
@@ -213,7 +213,7 @@ const StudentsPage = ()=>{
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                children: "Name:"
+                                children: "Name: "
                             }, void 0, false, {
                                 fileName: "[project]/app/(home)/student/page.tsx",
                                 lineNumber: 34,
@@ -229,7 +229,7 @@ const StudentsPage = ()=>{
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                children: "Age:"
+                                children: "Age: "
                             }, void 0, false, {
                                 fileName: "[project]/app/(home)/student/page.tsx",
                                 lineNumber: 35,
@@ -245,7 +245,7 @@ const StudentsPage = ()=>{
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                children: "Class:"
+                                children: "Class: "
                             }, void 0, false, {
                                 fileName: "[project]/app/(home)/student/page.tsx",
                                 lineNumber: 36,
