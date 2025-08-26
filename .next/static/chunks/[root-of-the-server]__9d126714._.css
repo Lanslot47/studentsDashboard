@@ -76,6 +76,7 @@
 
 @layer theme {
   :root, :host {
+    --color-red-500: oklch(63.7% .237 25.331);
     --color-green-200: oklch(92.5% .084 155.995);
     --color-green-600: oklch(62.7% .194 149.214);
     --color-green-700: oklch(52.7% .154 150.069);
@@ -319,6 +320,10 @@
     margin-bottom: calc(var(--spacing) * 4);
   }
 
+  .mb-6 {
+    margin-bottom: calc(var(--spacing) * 6);
+  }
+
   .ml-6 {
     margin-left: calc(var(--spacing) * 6);
   }
@@ -371,6 +376,10 @@
     align-items: center;
   }
 
+  .justify-between {
+    justify-content: space-between;
+  }
+
   .gap-2 {
     gap: calc(var(--spacing) * 2);
   }
@@ -417,12 +426,25 @@
     border-width: 1px;
   }
 
+  .border-b {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 1px;
+  }
+
+  .bg-blue-500 {
+    background-color: var(--color-blue-500);
+  }
+
   .bg-gray-100 {
     background-color: var(--color-gray-100);
   }
 
   .bg-green-600 {
     background-color: var(--color-green-600);
+  }
+
+  .bg-red-500 {
+    background-color: var(--color-red-500);
   }
 
   .bg-gradient-to-b {
@@ -453,8 +475,16 @@
     padding: calc(var(--spacing) * 6);
   }
 
+  .px-2 {
+    padding-inline: calc(var(--spacing) * 2);
+  }
+
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
+  }
+
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
   }
 
   .py-3 {
@@ -495,12 +525,12 @@
     font-weight: var(--font-weight-medium);
   }
 
-  .text-blue-500 {
-    color: var(--color-blue-500);
-  }
-
   .text-green-600 {
     color: var(--color-green-600);
+  }
+
+  .text-red-500 {
+    color: var(--color-red-500);
   }
 
   .text-white {

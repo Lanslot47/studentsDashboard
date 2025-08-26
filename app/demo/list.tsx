@@ -7,7 +7,7 @@ export const students = [
     { id: '106', name: "Aliyu Tahir", age: 13, class: 'SS1' },
     { id: '107', name: "Bahir Auwal", age: 14, class: 'SS1' },
     { id: '108', name: "Sa'ad Yahya", age: 15, class: 'SS1' },
-    { id: '109', name:"Karimatu yur" , age: 14, class: 'SS1' },
+    { id: '109', name: "Karimatu yur", age: 14, class: 'SS1' },
 
 
     /////ss2
@@ -19,5 +19,5 @@ export const students = [
     { id: '116', name: "Mukhtar Ibrahim", age: 15, class: 'SS2' },
     { id: '117', name: "Ibrahim Sagir", age: 15, class: 'SS2' },
     { id: '118', name: "Ibrahim Yahya", age: 17, class: 'SS2' },
-    { id: '119', name:"Aliyu Abdullahi" , age: 16, class: 'SS2' },
+    { id: '119', name: "Aliyu Abdullahi", age: 16, class: 'SS2' },
 ]

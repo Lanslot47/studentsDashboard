@@ -1,7 +1,5 @@
 import Link from "next/link";
 import { PiStudent } from "react-icons/pi";
-import { MdAdminPanelSettings } from "react-icons/md";
-import { RiAdminFill } from "react-icons/ri";
 import { RiAdminLine } from "react-icons/ri";
 const list = [
     {id:1, title:'Student', url:'../student', icon:<PiStudent size={25}/>},

@@ -1,47 +1,98 @@
-'use client'
-import { useRouter } from "next/navigation";
+// admin.tsx
+"use client";
 import { useState, useEffect } from "react";
-import { students } from "@/app/demo/list";
-import adminName from "@/app/Name";
+import { databases, databaseId, studentsCollectionId, ID } from "@/app/lib/appwrite";
 
 const AdminPage = () => {
-    const router = useRouter();
-    const [studentId, setStudentId] = useState('');
-    const [admin, setAdmin] = useState<null | typeof students>(null);
-    const [error, setError] = useState('');
-    const [studentName, setStudentName] = useState('');
-    const handleAdmin = (e: React.FormEvent) => {
-        e.preventDefault();
-        let found = students.map(std => std);
-        let adminKey = 'Password';
+  const [students, setStudents] = useState<any[]>([]);
+  const [newStudent, setNewStudent] = useState({ id: "", name: "", age: "", class: "" });
 
+  const fetchStudents = async () => {
+    const res = await databases.listDocuments(databaseId, studentsCollectionId);
+    setStudents(res.documents);
+  };
 
-        if (adminKey == studentId && adminName == studentName) {
-            setAdmin(found)
-            setError('');
-            router.push('../demo')
-        }
-        else {
-            setError('Enter correct UserName/Password')
-        }
-    }
-    return (
-        <>
-            <div id="div" className="max-w-md h-full p-4">
-                <h1 className="text-2xl font-bold mb-4">
-                    Enter Admin Key
-                </h1>
-                <form onSubmit={handleAdmin} className="space-y-4 ">
-                    <input type="text" id="one" placeholder="Enter Username" value={studentName} onChange={(e) => setStudentName(e.target.value)} className="w-full p-2 border rounded" />
-                    <input type="password" placeholder="Enter your Password" value={studentId} onChange={(e) => setStudentId(e.target.value)} className="w-full p-2 border rounded" />
-                    <button type="submit" className="w-full text-white p-2 rounded bg-green-600 cursor-pointer">View Info</button>
-                </form>
-                {error && <p className="text-blue-500 font-bold text-1xl">{error}</p>}
-            </div >
+  const addStudent = async () => {
+    await databases.createDocument(databaseId, studentsCollectionId, ID.unique(), {
+      ...newStudent,
+      age: Number(newStudent.age),
+    });
+    fetchStudents();
+  };
 
-        </>
-    );
+  const deleteStudent = async (docId: string) => {
+    await databases.deleteDocument(databaseId, studentsCollectionId, docId);
+    fetchStudents();
+  };
 
-}
+  const updateStudent = async (docId: string) => {
+    await databases.updateDocument(databaseId, studentsCollectionId, docId, {
+      name: "Updated Name",
+    });
+    fetchStudents();
+  };
+
+  useEffect(() => {
+    fetchStudents();
+  }, []);
+
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl mb-4 font-bold">Admin Panel</h1>
+
+      <div className="space-y-2 mb-6">
+        <input
+          placeholder="ID"
+          className="border p-2"
+          value={newStudent.id}
+          onChange={(e) => setNewStudent({ ...newStudent, id: e.target.value })}
+        />
+        <input
+          placeholder="Name"
+          className="border p-2"
+          value={newStudent.name}
+          onChange={(e) => setNewStudent({ ...newStudent, name: e.target.value })}
+        />
+        <input
+          placeholder="Age"
+          className="border p-2"
+          value={newStudent.age}
+          onChange={(e) => setNewStudent({ ...newStudent, age: e.target.value })}
+        />
+        <input
+          placeholder="Class"
+          className="border p-2"
+          value={newStudent.class}
+          onChange={(e) => setNewStudent({ ...newStudent, class: e.target.value })}
+        />
+        <button onClick={addStudent} className="bg-green-600 text-white px-4 py-2 rounded">
+          Add Student
+        </button>
+      </div>
+
+      <ul>
+        {students.map((s) => (
+          <li key={s.$id} className="flex justify-between items-center border-b py-2">
+            {s.name} ({s.class})
+            <div className="flex gap-2">
+              <button
+                onClick={() => updateStudent(s.$id)}
+                className="bg-blue-500 text-white px-2 rounded"
+              >
+                Update
+              </button>
+              <button
+                onClick={() => deleteStudent(s.$id)}
+                className="bg-red-500 text-white px-2 rounded"
+              >
+                Delete
+              </button>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 export default AdminPage;
