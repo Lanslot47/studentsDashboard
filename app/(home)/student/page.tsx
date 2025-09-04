@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { databases, databaseId, studentsCollectionId } from "@/app/lib/appwrite";
 import { Query } from "appwrite";
+import AuthGuard from "../components/AuthGuard";
 
 const StudentsPage = () => {
   const [studentId, setStudentId] = useState("");
@@ -31,6 +32,7 @@ const StudentsPage = () => {
   };
 
   return (
+    <AuthGuard>
     <div className="max-w-md p-6">
       <h1 className="text-2xl font-bold mb-4">Student access</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -58,6 +60,7 @@ const StudentsPage = () => {
         </div>
       )}
     </div>
+    </AuthGuard>
   );
 };
 

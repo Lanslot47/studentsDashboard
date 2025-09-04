@@ -6,17 +6,19 @@
 var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
 {
 __turbopack_context__.s({
+    "account": (()=>account),
     "databaseId": (()=>databaseId),
     "databases": (()=>databases),
     "studentsCollectionId": (()=>studentsCollectionId)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$appwrite$2f$dist$2f$esm$2f$sdk$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/appwrite/dist/esm/sdk.js [app-client] (ecmascript)");
 ;
-const client = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$appwrite$2f$dist$2f$esm$2f$sdk$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Client"]().setEndpoint("https://nyc.cloud.appwrite.io/v1") // or cloud.appwrite.io
-.setProject("686ef16b003334467830");
+const client = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$appwrite$2f$dist$2f$esm$2f$sdk$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Client"]().setEndpoint("https://nyc.cloud.appwrite.io/v1").setProject("686ef16b003334467830");
 const databases = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$appwrite$2f$dist$2f$esm$2f$sdk$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Databases"](client);
 const databaseId = "dashboardApp";
 const studentsCollectionId = "68ad4b590025e05f76e1";
+const account = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$appwrite$2f$dist$2f$esm$2f$sdk$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Account"](client);
+;
 ;
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
@@ -36,6 +38,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$appwrite$2e$ts
 
 var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
 {
+// admin.tsx
 // admin.tsx
 __turbopack_context__.s({
     "default": (()=>__TURBOPACK__default__export__)
@@ -85,138 +88,144 @@ const AdminPage = ()=>{
             fetchStudents();
         }
     }["AdminPage.useEffect"], []);
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "p-6",
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                className: "text-2xl mb-4 font-bold",
-                children: "Admin Panel"
-            }, void 0, false, {
-                fileName: "[project]/app/(home)/admin/page.tsx",
-                lineNumber: 41,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "space-y-2 mb-6",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                        placeholder: "ID",
-                        className: "border p-2",
-                        value: newStudent.id,
-                        onChange: (e)=>setNewStudent({
-                                ...newStudent,
-                                id: e.target.value
-                            })
-                    }, void 0, false, {
-                        fileName: "[project]/app/(home)/admin/page.tsx",
-                        lineNumber: 44,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                        placeholder: "Name",
-                        className: "border p-2",
-                        value: newStudent.name,
-                        onChange: (e)=>setNewStudent({
-                                ...newStudent,
-                                name: e.target.value
-                            })
-                    }, void 0, false, {
-                        fileName: "[project]/app/(home)/admin/page.tsx",
-                        lineNumber: 50,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                        placeholder: "Age",
-                        className: "border p-2",
-                        value: newStudent.age,
-                        onChange: (e)=>setNewStudent({
-                                ...newStudent,
-                                age: e.target.value
-                            })
-                    }, void 0, false, {
-                        fileName: "[project]/app/(home)/admin/page.tsx",
-                        lineNumber: 56,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                        placeholder: "Class",
-                        className: "border p-2",
-                        value: newStudent.class,
-                        onChange: (e)=>setNewStudent({
-                                ...newStudent,
-                                class: e.target.value
-                            })
-                    }, void 0, false, {
-                        fileName: "[project]/app/(home)/admin/page.tsx",
-                        lineNumber: 62,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                        onClick: addStudent,
-                        className: "bg-green-600 text-white px-4 py-2 rounded",
-                        children: "Add Student"
-                    }, void 0, false, {
-                        fileName: "[project]/app/(home)/admin/page.tsx",
-                        lineNumber: 68,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/app/(home)/admin/page.tsx",
-                lineNumber: 43,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                children: students.map((s)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                        className: "flex justify-between items-center border-b py-2",
-                        children: [
-                            s.name,
-                            " (",
-                            s.class,
-                            ")",
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex gap-2",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        onClick: ()=>updateStudent(s.$id),
-                                        className: "bg-blue-500 text-white px-2 rounded",
-                                        children: "Update"
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/(home)/admin/page.tsx",
-                                        lineNumber: 78,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        onClick: ()=>deleteStudent(s.$id),
-                                        className: "bg-red-500 text-white px-2 rounded",
-                                        children: "Delete"
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/(home)/admin/page.tsx",
-                                        lineNumber: 84,
-                                        columnNumber: 15
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/app/(home)/admin/page.tsx",
-                                lineNumber: 77,
-                                columnNumber: 13
-                            }, this)
-                        ]
-                    }, s.$id, true, {
-                        fileName: "[project]/app/(home)/admin/page.tsx",
-                        lineNumber: 75,
-                        columnNumber: 11
-                    }, this))
-            }, void 0, false, {
-                fileName: "[project]/app/(home)/admin/page.tsx",
-                lineNumber: 73,
-                columnNumber: 7
-            }, this)
-        ]
-    }, void 0, true, {
+    return <invalid> > /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("authGuard", {
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "p-6",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                    className: "text-2xl mb-4 font-bold",
+                    children: "Admin Panel"
+                }, void 0, false, {
+                    fileName: "[project]/app/(home)/admin/page.tsx",
+                    lineNumber: 42,
+                    columnNumber: 7
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "space-y-2 mb-6",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                            placeholder: "ID",
+                            className: "border p-2",
+                            value: newStudent.id,
+                            onChange: (e)=>setNewStudent({
+                                    ...newStudent,
+                                    id: e.target.value
+                                })
+                        }, void 0, false, {
+                            fileName: "[project]/app/(home)/admin/page.tsx",
+                            lineNumber: 45,
+                            columnNumber: 9
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                            placeholder: "Name",
+                            className: "border p-2",
+                            value: newStudent.name,
+                            onChange: (e)=>setNewStudent({
+                                    ...newStudent,
+                                    name: e.target.value
+                                })
+                        }, void 0, false, {
+                            fileName: "[project]/app/(home)/admin/page.tsx",
+                            lineNumber: 50,
+                            columnNumber: 9
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                            placeholder: "Age",
+                            className: "border p-2",
+                            value: newStudent.age,
+                            onChange: (e)=>setNewStudent({
+                                    ...newStudent,
+                                    age: e.target.value
+                                })
+                        }, void 0, false, {
+                            fileName: "[project]/app/(home)/admin/page.tsx",
+                            lineNumber: 55,
+                            columnNumber: 9
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                            placeholder: "Class",
+                            className: "border p-2",
+                            value: newStudent.class,
+                            onChange: (e)=>setNewStudent({
+                                    ...newStudent,
+                                    class: e.target.value
+                                })
+                        }, void 0, false, {
+                            fileName: "[project]/app/(home)/admin/page.tsx",
+                            lineNumber: 60,
+                            columnNumber: 9
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            onClick: addStudent,
+                            className: "bg-green-600 text-white px-4 py-2 rounded",
+                            children: "Add Student"
+                        }, void 0, false, {
+                            fileName: "[project]/app/(home)/admin/page.tsx",
+                            lineNumber: 65,
+                            columnNumber: 9
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/app/(home)/admin/page.tsx",
+                    lineNumber: 44,
+                    columnNumber: 7
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                    children: students.map((s)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                            className: "flex justify-between items-center border-b py-2",
+                            children: [
+                                s.name,
+                                " (",
+                                s.class,
+                                ")",
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex gap-2",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                            onClick: ()=>updateStudent(s.$id),
+                                            className: "bg-blue-500 text-white px-2 rounded",
+                                            children: "Update"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/(home)/admin/page.tsx",
+                                            lineNumber: 75,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                            onClick: ()=>deleteStudent(s.$id),
+                                            className: "bg-red-500 text-white px-2 rounded",
+                                            children: " Delete"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/(home)/admin/page.tsx",
+                                            lineNumber: 76,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/app/(home)/admin/page.tsx",
+                                    lineNumber: 74,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, s.$id, true, {
+                            fileName: "[project]/app/(home)/admin/page.tsx",
+                            lineNumber: 72,
+                            columnNumber: 11
+                        }, this))
+                }, void 0, false, {
+                    fileName: "[project]/app/(home)/admin/page.tsx",
+                    lineNumber: 70,
+                    columnNumber: 7
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/app/(home)/admin/page.tsx",
+            lineNumber: 41,
+            columnNumber: 18
+        }, this)
+    }, void 0, false, {
         fileName: "[project]/app/(home)/admin/page.tsx",
-        lineNumber: 40,
-        columnNumber: 5
+        lineNumber: 41,
+        columnNumber: 7
     }, this);
 };
 _s(AdminPage, "Cme3tQxKZoA82D6NeA4rjUJviHE=");
