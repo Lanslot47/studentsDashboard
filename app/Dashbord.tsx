@@ -7,7 +7,7 @@ const list = [
 ]
 const DashboardPage = () => {
     return (
-        <div className="h-screen w-64 bg-gradient-to-b via-white to-green-200 rounded-r-xl shadow-xl p-6">
+        <div className="h-screen w-64 bg-gradient-to-b via-white to-green-200 rounded-r-xl shadow-xl p-6 ">
             <h1 className="text-2xl font-extrabold text-green-600 text-center mb-4">TGC</h1>
             <div className="flex flex-col space-y-2">
                 {

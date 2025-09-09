@@ -1,7 +1,7 @@
 {
   "/(home)/admin/page": "app/(home)/admin/page.js",
   "/(home)/auth/page": "app/(home)/auth/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
+  "/(home)/student/page": "app/(home)/student/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/page": "app/page.js"
 }

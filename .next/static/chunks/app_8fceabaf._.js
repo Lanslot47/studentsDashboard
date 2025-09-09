@@ -89,7 +89,7 @@ function AuthGuard({ children }) {
         children: children
     }, void 0, false);
 }
-_s(AuthGuard, "XVMReEWVJhbwVTL73p+9pZeQf0c=", false, function() {
+_s(AuthGuard, "+gdBHa1gbW9Mmc3iF6LvDTPtsos=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"]
     ];

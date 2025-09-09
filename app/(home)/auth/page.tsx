@@ -2,7 +2,6 @@
 
 import { account, ID } from "@/app/lib/appwrite"
 import { useRouter } from "next/navigation"
-// const useRouter = require("next/router")
 import React, { useState } from "react"
 
 const Auth = () => {
@@ -44,14 +43,20 @@ const Auth = () => {
 
     return (
         <div>
-            <h1>Login/ Signup</h1>
-            <form action="">
-                <input type="email" value={email} placeholder="email" className="border" onChange={(e) => setEmail(e.target.value)} />
-                <input type="password" value={password} placeholder="password" className="border" onChange={(e) => setPassword(e.target.value)} />
-                <button onClick={handleLogin} className="border">Login</button>
-                <button onClick={handleSignup} className="border">signup</button>
+            <form action="" className="space-y-6 h-[65vh] bg-gray-100 shadow-xl border py-3 rounded-md w-88 ml-68 mt-18 ">
+                <h1 className="text-center text-green-600 font-semibold text-xl">Login/ Signup</h1>
+                <div className="space-y-8 ml-10">
+                    <label htmlFor="">Email:</label>
+                    <input type="email" value={email} placeholder="Email" className="border px-3 py-2 w-68 rounded-sm outline-none font-sans text-gray-400 text-sm h-10" onChange={(e) => setEmail(e.target.value)} required/><br />
+                    <label htmlFor="">Password:</label>
+                    <input type="password" value={password} placeholder="Password" className="border px-3 py-2 w-68 rounded-sm outline-none h-10" onChange={(e) => setPassword(e.target.value)} required/><br />
+                    <button onClick={handleLogin} className="border px-3 py-2 w-68 bg-green-600 rounded-sm text-white cursor-pointer">Login</button>
+                    <button onClick={handleSignup} className="border w-68 py-2 px-3 border border-green-600 rounded cursor-pointer text-green-600">signup</button>
+                </div>
             </form>
-            {error && <p>{error}</p>}
+            <div className="text-red-400 font-sans ml-68 mt-3">
+                {error && <p>{error}</p>}
+            </div>
         </div>
     )
 };
