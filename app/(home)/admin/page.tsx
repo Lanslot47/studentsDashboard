@@ -41,14 +41,12 @@ const AdminPage = () => {
     <AuthGuard>
       <div className="w-full min-h-screen bg-gray-50 p-4 sm:p-6 lg:p-8">
         <h1 className="text-xl sm:text-2xl font-bold mb-6 text-gray-800">Admin Panel</h1>
-
- d       {/* Form Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           <input
             placeholder="ID"
             className="border rounded p-2 w-full"
             value={newStudent.id}
-            onChange={(e) => setNewStudent({ ...newStudent, id: e.tdarget.value })}
+            onChange={(e) => setNewStudent({ ...newStudent, id: e.target.value })}
           />
           <input
             placeholder="Name"
@@ -77,16 +75,12 @@ const AdminPage = () => {
           Add Student
         </button>
 
-        {/* Students List */}
         <div className="bg-white rounded-lg shadow divide-y">
           {students.length === 0 && (
             <p className="p-4 text-gray-500">No students found.</p>
           )}
           {students.map((s) => (
-            <div
-              key={s.$id}
-              className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-4"
-            >
+            <div key={s.$id} className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-4">
               <p className="text-gray-800 font-medium">
                 {s.name} <span className="text-sm text-gray-500">({s.class})</span>
               </p>
