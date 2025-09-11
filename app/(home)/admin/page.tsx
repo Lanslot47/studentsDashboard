@@ -1,21 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
-import {
-  databases,
-  databaseId,
-  studentsCollectionId,
-  ID,
-} from "@/app/lib/appwrite";
+import { databases, databaseId, studentsCollectionId, ID } from "@/app/lib/appwrite";
 import AuthGuard from "../components/AuthGuard";
 
 const AdminPage = () => {
   const [students, setStudents] = useState<any[]>([]);
-  const [newStudent, setNewStudent] = useState({
-    id: "",
-    name: "",
-    age: "",
-    class: "",
-  });
+  const [newStudent, setNewStudent] = useState({ id: "", name: "", age: "", class: "" });
 
   const fetchStudents = async () => {
     const res = await databases.listDocuments(databaseId, studentsCollectionId);
@@ -23,17 +13,12 @@ const AdminPage = () => {
   };
 
   const addStudent = async () => {
-    await databases.createDocument(
-      databaseId,
-      studentsCollectionId,
-      ID.unique(),
-      {
-        ...newStudent,
-        age: Number(newStudent.age),
-      }
-    );
-    setNewStudent({ id: "", name: "", age: "", class: "" }); // reset form
+    await databases.createDocument(databaseId, studentsCollectionId, ID.unique(), {
+      ...newStudent,
+      age: Number(newStudent.age),
+    });
     fetchStudents();
+    setNewStudent({ id: "", name: "", age: "", class: "" });
   };
 
   const deleteStudent = async (docId: string) => {
@@ -54,78 +39,74 @@ const AdminPage = () => {
 
   return (
     <AuthGuard>
-      <div className="p-6 max-w-2xl mx-auto">
-        <h1 className="text-2xl mb-6 font-bold text-center">Admin Panel</h1>
+      <div className="w-full min-h-screen bg-gray-50 p-4 sm:p-6 lg:p-8">
+        <h1 className="text-xl sm:text-2xl font-bold mb-6 text-gray-800">Admin Panel</h1>
 
-        {/* Add Student Form */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+ d       {/* Form Section */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           <input
             placeholder="ID"
-            className="border p-2 rounded w-full"
+            className="border rounded p-2 w-full"
             value={newStudent.id}
-            onChange={(e) =>
-              setNewStudent({ ...newStudent, id: e.target.value })
-            }
+            onChange={(e) => setNewStudent({ ...newStudent, id: e.tdarget.value })}
           />
           <input
             placeholder="Name"
-            className="border p-2 rounded w-full"
+            className="border rounded p-2 w-full"
             value={newStudent.name}
-            onChange={(e) =>
-              setNewStudent({ ...newStudent, name: e.target.value })
-            }
+            onChange={(e) => setNewStudent({ ...newStudent, name: e.target.value })}
           />
           <input
             placeholder="Age"
-            className="border p-2 rounded w-full"
+            className="border rounded p-2 w-full"
             value={newStudent.age}
-            onChange={(e) =>
-              setNewStudent({ ...newStudent, age: e.target.value })
-            }
+            onChange={(e) => setNewStudent({ ...newStudent, age: e.target.value })}
           />
           <input
             placeholder="Class"
-            className="border p-2 rounded w-full"
+            className="border rounded p-2 w-full"
             value={newStudent.class}
-            onChange={(e) =>
-              setNewStudent({ ...newStudent, class: e.target.value })
-            }
+            onChange={(e) => setNewStudent({ ...newStudent, class: e.target.value })}
           />
         </div>
+
         <button
           onClick={addStudent}
-          className="bg-green-600 text-white px-4 py-2 rounded w-full sm:w-auto"
+          className="bg-green-600 hover:bg-green-700 text-white font-medium px-4 py-2 rounded mb-8"
         >
           Add Student
         </button>
 
         {/* Students List */}
-        <ul className="mt-8 space-y-3">
+        <div className="bg-white rounded-lg shadow divide-y">
+          {students.length === 0 && (
+            <p className="p-4 text-gray-500">No students found.</p>
+          )}
           {students.map((s) => (
-            <li
+            <div
               key={s.$id}
-              className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b py-2 gap-2"
+              className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-4"
             >
-              <span>
-                {s.name} ({s.class})
-              </span>
-              <div className="flex gap-2 flex-wrap">
+              <p className="text-gray-800 font-medium">
+                {s.name} <span className="text-sm text-gray-500">({s.class})</span>
+              </p>
+              <div className="flex gap-2 mt-2 sm:mt-0">
                 <button
                   onClick={() => updateStudent(s.$id)}
-                  className="bg-blue-500 text-white px-3 py-1 rounded text-sm"
+                  className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded"
                 >
                   Update
                 </button>
                 <button
                   onClick={() => deleteStudent(s.$id)}
-                  className="bg-red-500 text-white px-3 py-1 rounded text-sm"
+                  className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded"
                 >
                   Delete
                 </button>
               </div>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </AuthGuard>
   );

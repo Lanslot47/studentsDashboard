@@ -1,5 +1,4 @@
 "use client";
-
 import { account, ID } from "@/app/lib/appwrite";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
@@ -36,58 +35,62 @@ const Auth = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-[70vh] p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
       <form
-        className="w-full max-w-md bg-gray-100 shadow-xl border rounded-md p-6 space-y-6"
+        onSubmit={handleLogin}
+        className="w-full max-w-md bg-white rounded-lg shadow-lg p-6 space-y-6"
       >
-        <h1 className="text-center text-green-600 font-semibold text-xl">
+        <h1 className="text-center text-green-600 font-semibold text-2xl">
           Login / Signup
         </h1>
 
         <div className="space-y-4">
           <div>
-            <label className="block mb-1 text-sm">Email:</label>
+            <label className="block mb-1 text-sm font-medium text-gray-700">
+              Email
+            </label>
             <input
               type="email"
               value={email}
               placeholder="Email"
-              className="w-full border px-3 py-2 rounded-sm outline-none text-gray-700"
+              className="w-full border px-3 py-2 rounded outline-none text-gray-700 focus:ring-1 focus:ring-green-500"
               onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
 
           <div>
-            <label className="block mb-1 text-sm">Password:</label>
+            <label className="block mb-1 text-sm font-medium text-gray-700">
+              Password
+            </label>
             <input
               type="password"
               value={password}
               placeholder="Password"
-              className="w-full border px-3 py-2 rounded-sm outline-none text-gray-700"
+              className="w-full border px-3 py-2 rounded outline-none text-gray-700 focus:ring-1 focus:ring-green-500"
               onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
 
           <button
-            onClick={handleLogin}
-            className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700"
+            type="submit"
+            className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition"
           >
             Login
           </button>
 
           <button
+            type="button"
             onClick={handleSignup}
-            className="w-full border border-green-600 text-green-600 py-2 rounded hover:bg-green-50"
+            className="w-full border border-green-600 text-green-600 py-2 rounded hover:bg-green-50 transition"
           >
             Signup
           </button>
         </div>
-      </form>
 
-      {error && (
-        <div className="absolute bottom-6 text-red-500 text-sm">{error}</div>
-      )}
+        {error && <p className="text-red-500 text-sm text-center">{error}</p>}
+      </form>
     </div>
   );
 };

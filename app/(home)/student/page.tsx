@@ -1,5 +1,6 @@
+// students.tsx
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { databases, databaseId, studentsCollectionId } from "@/app/lib/appwrite";
 import { Query } from "appwrite";
 import AuthGuard from "../components/AuthGuard";
@@ -14,7 +15,7 @@ const StudentsPage = () => {
 
     try {
       const res = await databases.listDocuments(databaseId, studentsCollectionId, [
-        Query.equal("id", studentId.trim()),
+        Query.equal("id", studentId.trim())
       ]);
 
       if (res.documents.length > 0) {
@@ -32,42 +33,33 @@ const StudentsPage = () => {
 
   return (
     <AuthGuard>
-      <div className="max-w-md mx-auto p-6">
-        <h1 className="text-2xl font-bold mb-4 text-center">Student Access</h1>
-
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <input
-            type="text"
-            placeholder="Enter your student ID"
-            value={studentId}
-            onChange={(e) => setStudentId(e.target.value)}
-            className="w-full p-2 border rounded"
-          />
-          <button
-            type="submit"
-            className="w-full bg-green-600 cursor-pointer text-white p-2 rounded hover:bg-green-700"
-          >
-            View Info
-          </button>
-        </form>
-
-        {error && <p className="text-red-500 mt-4">{error}</p>}
-
-        {student && (
-          <div className="mt-6 p-4 border rounded bg-gray-100">
-            <h2 className="text-xl font-bold mb-2">Student Info</h2>
-            <p>
-              <strong>Name:</strong> {student.name}
-            </p>
-            <p>
-              <strong>Age:</strong> {student.age}
-            </p>
-            <p>
-              <strong>Class:</strong> {student.class}
-            </p>
-          </div>
-        )}
-      </div>
+    <div className="w-full min-h-screen bg-gray-50 p-4 sm:p-6 lg:p-8">
+      <h1 className="text-2xl font-bold mb-4">Student access</h1>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <input
+          type="text"
+          placeholder="Enter your student id"
+          value={studentId}
+          onChange={(e) => setStudentId(e.target.value)}
+          className="w-full p-2 border rounded"
+        />
+        <button
+          type="submit"
+          className="w-full bg-green-600 cursor-pointer text-white p-2 rounded hover:bg-green-700"
+        >
+          View Info
+        </button>
+      </form>
+      {error && <p className="text-red-500 mt-4">{error}</p>}
+      {student && (
+        <div className="mt-6 p-4 border rounded bg-gray-100">
+          <h2 className="text-xl font-bold mb-2">Student Info</h2>
+          <p><strong>Name:</strong> {student.name}</p>
+          <p><strong>Age:</strong> {student.age}</p>
+          <p><strong>Class:</strong> {student.class}</p>
+        </div>
+      )}
+    </div>
     </AuthGuard>
   );
 };
