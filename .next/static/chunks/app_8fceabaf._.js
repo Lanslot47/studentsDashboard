@@ -106,7 +106,6 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 
 var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
 {
-// admin.tsx
 __turbopack_context__.s({
     "default": (()=>__TURBOPACK__default__export__)
 });
@@ -140,6 +139,12 @@ const AdminPage = ()=>{
             ...newStudent,
             age: Number(newStudent.age)
         });
+        setNewStudent({
+            id: "",
+            name: "",
+            age: "",
+            class: ""
+        }); // reset form
         fetchStudents();
     };
     const deleteStudent = async (docId)=>{
@@ -159,22 +164,22 @@ const AdminPage = ()=>{
     }["AdminPage.useEffect"], []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$home$292f$components$2f$AuthGuard$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "p-6",
+            className: "p-6 max-w-2xl mx-auto",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                    className: "text-2xl mb-4 font-bold",
+                    className: "text-2xl mb-6 font-bold text-center",
                     children: "Admin Panel"
                 }, void 0, false, {
                     fileName: "[project]/app/(home)/admin/page.tsx",
-                    lineNumber: 43,
-                    columnNumber: 7
+                    lineNumber: 58,
+                    columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "space-y-2 mb-6",
+                    className: "grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                             placeholder: "ID",
-                            className: "border p-2",
+                            className: "border p-2 rounded w-full",
                             value: newStudent.id,
                             onChange: (e)=>setNewStudent({
                                     ...newStudent,
@@ -182,12 +187,12 @@ const AdminPage = ()=>{
                                 })
                         }, void 0, false, {
                             fileName: "[project]/app/(home)/admin/page.tsx",
-                            lineNumber: 46,
-                            columnNumber: 9
+                            lineNumber: 62,
+                            columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                             placeholder: "Name",
-                            className: "border p-2",
+                            className: "border p-2 rounded w-full",
                             value: newStudent.name,
                             onChange: (e)=>setNewStudent({
                                     ...newStudent,
@@ -195,12 +200,12 @@ const AdminPage = ()=>{
                                 })
                         }, void 0, false, {
                             fileName: "[project]/app/(home)/admin/page.tsx",
-                            lineNumber: 51,
-                            columnNumber: 9
+                            lineNumber: 70,
+                            columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                             placeholder: "Age",
-                            className: "border p-2",
+                            className: "border p-2 rounded w-full",
                             value: newStudent.age,
                             onChange: (e)=>setNewStudent({
                                     ...newStudent,
@@ -208,12 +213,12 @@ const AdminPage = ()=>{
                                 })
                         }, void 0, false, {
                             fileName: "[project]/app/(home)/admin/page.tsx",
-                            lineNumber: 56,
-                            columnNumber: 9
+                            lineNumber: 78,
+                            columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                             placeholder: "Class",
-                            className: "border p-2",
+                            className: "border p-2 rounded w-full",
                             value: newStudent.class,
                             onChange: (e)=>setNewStudent({
                                     ...newStudent,
@@ -221,83 +226,92 @@ const AdminPage = ()=>{
                                 })
                         }, void 0, false, {
                             fileName: "[project]/app/(home)/admin/page.tsx",
-                            lineNumber: 61,
-                            columnNumber: 9
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            onClick: addStudent,
-                            className: "bg-green-600 text-white px-4 py-2 rounded",
-                            children: "Add Student"
-                        }, void 0, false, {
-                            fileName: "[project]/app/(home)/admin/page.tsx",
-                            lineNumber: 66,
-                            columnNumber: 9
+                            lineNumber: 86,
+                            columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/(home)/admin/page.tsx",
-                    lineNumber: 45,
-                    columnNumber: 7
+                    lineNumber: 61,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                    onClick: addStudent,
+                    className: "bg-green-600 text-white px-4 py-2 rounded w-full sm:w-auto",
+                    children: "Add Student"
+                }, void 0, false, {
+                    fileName: "[project]/app/(home)/admin/page.tsx",
+                    lineNumber: 95,
+                    columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                    className: "mt-8 space-y-3",
                     children: students.map((s)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                            className: "flex justify-between items-center border-b py-2",
+                            className: "flex flex-col sm:flex-row justify-between items-start sm:items-center border-b py-2 gap-2",
                             children: [
-                                s.name,
-                                " (",
-                                s.class,
-                                ")",
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    children: [
+                                        s.name,
+                                        " (",
+                                        s.class,
+                                        ")"
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/app/(home)/admin/page.tsx",
+                                    lineNumber: 109,
+                                    columnNumber: 15
+                                }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex gap-2",
+                                    className: "flex gap-2 flex-wrap",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                             onClick: ()=>updateStudent(s.$id),
-                                            className: "bg-blue-500 text-white px-2 rounded",
+                                            className: "bg-blue-500 text-white px-3 py-1 rounded text-sm",
                                             children: "Update"
                                         }, void 0, false, {
                                             fileName: "[project]/app/(home)/admin/page.tsx",
-                                            lineNumber: 76,
-                                            columnNumber: 15
+                                            lineNumber: 113,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                             onClick: ()=>deleteStudent(s.$id),
-                                            className: "bg-red-500 text-white px-2 rounded",
-                                            children: " Delete"
+                                            className: "bg-red-500 text-white px-3 py-1 rounded text-sm",
+                                            children: "Delete"
                                         }, void 0, false, {
                                             fileName: "[project]/app/(home)/admin/page.tsx",
-                                            lineNumber: 77,
-                                            columnNumber: 15
+                                            lineNumber: 119,
+                                            columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/(home)/admin/page.tsx",
-                                    lineNumber: 75,
-                                    columnNumber: 13
+                                    lineNumber: 112,
+                                    columnNumber: 15
                                 }, this)
                             ]
                         }, s.$id, true, {
                             fileName: "[project]/app/(home)/admin/page.tsx",
-                            lineNumber: 73,
-                            columnNumber: 11
+                            lineNumber: 105,
+                            columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/app/(home)/admin/page.tsx",
-                    lineNumber: 71,
-                    columnNumber: 7
+                    lineNumber: 103,
+                    columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/(home)/admin/page.tsx",
-            lineNumber: 42,
+            lineNumber: 57,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/(home)/admin/page.tsx",
-        lineNumber: 41,
+        lineNumber: 56,
         columnNumber: 5
     }, this);
 };
-_s(AdminPage, "Cme3tQxKZoA82D6NeA4rjUJviHE=");
+_s(AdminPage, "6W1iwjcgK/iYlL7ttMJgNdnpA8s=");
 _c = AdminPage;
 const __TURBOPACK__default__export__ = AdminPage;
 var _c;
