@@ -1,7 +1,9 @@
+// layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import DashboardPage from "./Dashbord";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -25,12 +27,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-100`}>
-        <div className="flex">
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-100`}
+      >
+        <div className="flex min-h-screen">
+          {/* Sidebar */}
           <DashboardPage />
-          <div className="">{children}</div>
-        </div>
 
+          {/* Main Content */}
+          <main className="flex-1 p-4 md:ml-64 transition-all">
+            {children}
+          </main>
+        </div>
       </body>
     </html>
   );
