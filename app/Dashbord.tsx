@@ -15,7 +15,6 @@ const DashboardPage = () => {
 
   return (
     <>
-      {/* Mobile Toggle */}
       <button
         onClick={() => setOpen(!open)}
         className="lg:hidden fixed top-4 left-4 z-50 p-2 rounded bg-green-600 text-white"
