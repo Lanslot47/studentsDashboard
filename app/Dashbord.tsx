@@ -15,7 +15,6 @@ export default function DashboardPage({ children }: { children?: React.ReactNode
 
   return (
     <div className="flex h-screen overflow-hidden">
-      {/* ===== Sidebar ===== */}
       <aside
         className={`fixed lg:static top-0 left-0 h-full w-64 bg-gradient-to-b from-white via-white to-green-200 shadow-xl p-6 rounded-r-xl transform transition-transform duration-300 z-40
           ${open ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}`}
