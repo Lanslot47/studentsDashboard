@@ -1,7 +1,9 @@
-import Auth from "./(home)/auth/page";
+import Hero from "./(home)/components/Hero";
 
 export default function Home() {
   return (
-    <Auth/>
+    <div>
+      <Hero/>
+    </div>
   );
 }

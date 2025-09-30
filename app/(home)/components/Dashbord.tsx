@@ -12,7 +12,6 @@ const list = [
 
 export default function DashboardPage({ children }: { children?: React.ReactNode }) {
   const [open, setOpen] = useState(false);
-
   return (
     <div className="flex h-screen overflow-hidden">
       <aside
@@ -20,7 +19,7 @@ export default function DashboardPage({ children }: { children?: React.ReactNode
           ${open ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}`}
       >
         <h1 className="text-2xl font-extrabold text-green-600 text-center mb-6">
-          TGC
+          THE GREEN COLLEGE
         </h1>
 
         <nav className="flex flex-col space-y-2">

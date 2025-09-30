@@ -2,7 +2,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import DashboardPage from "./Dashbord";
+import DashboardPage from "./(home)/components/Dashbord";
+import Navbar from "./(home)/components/Navbar";
+import Hero from "./(home)/components/Hero";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,12 +31,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-100`}
       >
+        <Navbar />
         <div className="flex min-h-screen">
-          {/* Sidebar */}
-          <DashboardPage />
+          {/* <DashboardPage /> */}
 
-          {/* Main Content */}
-          <main className="flex-1 p-4 md:ml-64 transition-all">
+          <main className="flex-1 p-4  transition-all">
             {children}
           </main>
         </div>

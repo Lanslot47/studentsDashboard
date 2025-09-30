@@ -6,6 +6,8 @@ import AuthGuard from "../components/AuthGuard";
 const AdminPage = () => {
   const [students, setStudents] = useState<any[]>([]);
   const [newStudent, setNewStudent] = useState({ id: "", name: "", age: "", class: "" });
+  const [confirmModal, setComfirmModal] = useState(false);
+  const [itemToDel, setItemTodel] = useState<string | null>(null)
 
   const fetchStudents = async () => {
     const res = await databases.listDocuments(databaseId, studentsCollectionId);
@@ -20,15 +22,37 @@ const AdminPage = () => {
     fetchStudents();
     setNewStudent({ id: "", name: "", age: "", class: "" });
   };
-
+  // const ogDelete = async () => {
+  //   alert("Show want to delete");
+  //   deleteStudent(docId:)
+  // }
   const deleteStudent = async (docId: string) => {
     await databases.deleteDocument(databaseId, studentsCollectionId, docId);
     fetchStudents();
   };
+  const confirmDel = (docId: string) => {
+    setItemTodel(docId);
+    setComfirmModal(true)
+  }
+  const handleConfirm = () => {
+    if (itemToDel !== null && typeof itemToDel === 'string') {
+      deleteStudent(itemToDel);
+      setComfirmModal(false);
+      setItemTodel(null)
+    }
+
+  }
+  const handleCancel = () => {
+    setComfirmModal(false)
+    setItemTodel(null)
+  }
+
 
   const updateStudent = async (docId: string) => {
     await databases.updateDocument(databaseId, studentsCollectionId, docId, {
-      name: "Updated Name",
+      name: newStudent.name,
+      class: newStudent.class,
+      id: newStudent.id,
     });
     fetchStudents();
   };
@@ -97,6 +121,13 @@ const AdminPage = () => {
                 >
                   Delete
                 </button>
+                {confirmModal && (
+                  <div>
+                    <p>show want to del item</p>
+                    <button onClick={handleConfirm}>confirm</button>
+                    <button onClick={handleCancel}>cancel</button>
+                  </div>)
+                }
               </div>
             </div>
           ))}

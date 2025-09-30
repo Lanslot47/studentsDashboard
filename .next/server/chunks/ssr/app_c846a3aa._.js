@@ -108,6 +108,8 @@ const AdminPage = ()=>{
         age: "",
         class: ""
     });
+    const [confirmModal, setComfirmModal] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [itemToDel, setItemTodel] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const fetchStudents = async ()=>{
         const res = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$appwrite$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["databases"].listDocuments(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$appwrite$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["databaseId"], __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$appwrite$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["studentsCollectionId"]);
         setStudents(res.documents);
@@ -125,13 +127,34 @@ const AdminPage = ()=>{
             class: ""
         });
     };
+    // const ogDelete = async () => {
+    //   alert("Show want to delete");
+    //   deleteStudent(docId:)
+    // }
     const deleteStudent = async (docId)=>{
         await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$appwrite$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["databases"].deleteDocument(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$appwrite$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["databaseId"], __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$appwrite$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["studentsCollectionId"], docId);
         fetchStudents();
     };
+    const confirmDel = (docId)=>{
+        setItemTodel(docId);
+        setComfirmModal(true);
+    };
+    const handleConfirm = ()=>{
+        if (itemToDel !== null && typeof itemToDel === 'string') {
+            deleteStudent(itemToDel);
+            setComfirmModal(false);
+            setItemTodel(null);
+        }
+    };
+    const handleCancel = ()=>{
+        setComfirmModal(false);
+        setItemTodel(null);
+    };
     const updateStudent = async (docId)=>{
         await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$appwrite$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["databases"].updateDocument(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$appwrite$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["databaseId"], __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$appwrite$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["studentsCollectionId"], docId, {
-            name: "Updated Name"
+            name: newStudent.name,
+            class: newStudent.class,
+            id: newStudent.id
         });
         fetchStudents();
     };
@@ -147,7 +170,7 @@ const AdminPage = ()=>{
                     children: "Admin Panel"
                 }, void 0, false, {
                     fileName: "[project]/app/(home)/admin/page.tsx",
-                    lineNumber: 43,
+                    lineNumber: 67,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -163,7 +186,7 @@ const AdminPage = ()=>{
                                 })
                         }, void 0, false, {
                             fileName: "[project]/app/(home)/admin/page.tsx",
-                            lineNumber: 45,
+                            lineNumber: 69,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -176,7 +199,7 @@ const AdminPage = ()=>{
                                 })
                         }, void 0, false, {
                             fileName: "[project]/app/(home)/admin/page.tsx",
-                            lineNumber: 51,
+                            lineNumber: 75,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -189,7 +212,7 @@ const AdminPage = ()=>{
                                 })
                         }, void 0, false, {
                             fileName: "[project]/app/(home)/admin/page.tsx",
-                            lineNumber: 57,
+                            lineNumber: 81,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -202,13 +225,13 @@ const AdminPage = ()=>{
                                 })
                         }, void 0, false, {
                             fileName: "[project]/app/(home)/admin/page.tsx",
-                            lineNumber: 63,
+                            lineNumber: 87,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/(home)/admin/page.tsx",
-                    lineNumber: 44,
+                    lineNumber: 68,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -217,7 +240,7 @@ const AdminPage = ()=>{
                     children: "Add Student"
                 }, void 0, false, {
                     fileName: "[project]/app/(home)/admin/page.tsx",
-                    lineNumber: 71,
+                    lineNumber: 95,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -228,7 +251,7 @@ const AdminPage = ()=>{
                             children: "No students found."
                         }, void 0, false, {
                             fileName: "[project]/app/(home)/admin/page.tsx",
-                            lineNumber: 80,
+                            lineNumber: 104,
                             columnNumber: 13
                         }, this),
                         students.map((s)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -248,13 +271,13 @@ const AdminPage = ()=>{
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/(home)/admin/page.tsx",
-                                                lineNumber: 85,
+                                                lineNumber: 109,
                                                 columnNumber: 26
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/(home)/admin/page.tsx",
-                                        lineNumber: 84,
+                                        lineNumber: 108,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -266,7 +289,7 @@ const AdminPage = ()=>{
                                                 children: "Update"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/(home)/admin/page.tsx",
-                                                lineNumber: 88,
+                                                lineNumber: 112,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -275,36 +298,67 @@ const AdminPage = ()=>{
                                                 children: "Delete"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/(home)/admin/page.tsx",
-                                                lineNumber: 94,
+                                                lineNumber: 118,
                                                 columnNumber: 17
+                                            }, this),
+                                            confirmModal && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        children: "show want to del item"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/(home)/admin/page.tsx",
+                                                        lineNumber: 126,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                        onClick: handleConfirm,
+                                                        children: "confirm"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/(home)/admin/page.tsx",
+                                                        lineNumber: 127,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                        onClick: handleCancel,
+                                                        children: "cancel"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/(home)/admin/page.tsx",
+                                                        lineNumber: 128,
+                                                        columnNumber: 21
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/app/(home)/admin/page.tsx",
+                                                lineNumber: 125,
+                                                columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/(home)/admin/page.tsx",
-                                        lineNumber: 87,
+                                        lineNumber: 111,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, s.$id, true, {
                                 fileName: "[project]/app/(home)/admin/page.tsx",
-                                lineNumber: 83,
+                                lineNumber: 107,
                                 columnNumber: 13
                             }, this))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/(home)/admin/page.tsx",
-                    lineNumber: 78,
+                    lineNumber: 102,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/(home)/admin/page.tsx",
-            lineNumber: 42,
+            lineNumber: 66,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/(home)/admin/page.tsx",
-        lineNumber: 41,
+        lineNumber: 65,
         columnNumber: 5
     }, this);
 };
