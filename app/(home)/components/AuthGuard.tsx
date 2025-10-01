@@ -15,7 +15,7 @@ export default function AuthGuard({ children }: { children: React.ReactNode }) {
                 console.log("User Logged in:", user)
             } catch (error) {
                 console.log("No user found, redirect to...")
-                router.push('/auth');
+                router.push('./auth/adminA');
             }
             finally {
                 setLoading(false)

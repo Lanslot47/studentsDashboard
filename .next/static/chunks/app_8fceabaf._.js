@@ -65,7 +65,7 @@ function AuthGuard({ children }) {
                         console.log("User Logged in:", user);
                     } catch (error) {
                         console.log("No user found, redirect to...");
-                        router.push('/auth');
+                        router.push('./auth/adminA');
                     } finally{
                         setLoading(false);
                     }
@@ -130,8 +130,8 @@ const AdminPage = ()=>{
         age: "",
         class: ""
     });
-    const [confirmModal, setComfirmModal] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [itemToDel, setItemTodel] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [confirmModal, setConfirmModal] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [itemToDel, setItemToDel] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const fetchStudents = async ()=>{
         const res = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$appwrite$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["databases"].listDocuments(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$appwrite$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["databaseId"], __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$appwrite$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["studentsCollectionId"]);
         setStudents(res.documents);
@@ -149,36 +149,39 @@ const AdminPage = ()=>{
             class: ""
         });
     };
-    // const ogDelete = async () => {
-    //   alert("Show want to delete");
-    //   deleteStudent(docId:)
-    // }
     const deleteStudent = async (docId)=>{
         await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$appwrite$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["databases"].deleteDocument(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$appwrite$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["databaseId"], __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$appwrite$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["studentsCollectionId"], docId);
         fetchStudents();
     };
     const confirmDel = (docId)=>{
-        setItemTodel(docId);
-        setComfirmModal(true);
+        setItemToDel(docId);
+        setConfirmModal(true);
     };
     const handleConfirm = ()=>{
-        if (itemToDel !== null && typeof itemToDel === 'string') {
+        if (itemToDel) {
             deleteStudent(itemToDel);
-            setComfirmModal(false);
-            setItemTodel(null);
+            setConfirmModal(false);
+            setItemToDel(null);
         }
     };
     const handleCancel = ()=>{
-        setComfirmModal(false);
-        setItemTodel(null);
+        setConfirmModal(false);
+        setItemToDel(null);
     };
     const updateStudent = async (docId)=>{
         await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$appwrite$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["databases"].updateDocument(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$appwrite$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["databaseId"], __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$appwrite$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["studentsCollectionId"], docId, {
+            id: newStudent.id,
             name: newStudent.name,
-            class: newStudent.class,
-            id: newStudent.id
+            age: Number(newStudent.age),
+            class: newStudent.class
         });
         fetchStudents();
+        setNewStudent({
+            id: "",
+            name: "",
+            age: "",
+            class: ""
+        });
     };
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "AdminPage.useEffect": ()=>{
@@ -317,44 +320,13 @@ const AdminPage = ()=>{
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                onClick: ()=>deleteStudent(s.$id),
+                                                onClick: ()=>confirmDel(s.$id),
                                                 className: "bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded",
                                                 children: "Delete"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/(home)/admin/page.tsx",
                                                 lineNumber: 118,
                                                 columnNumber: 17
-                                            }, this),
-                                            confirmModal && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        children: "show want to del item"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/app/(home)/admin/page.tsx",
-                                                        lineNumber: 126,
-                                                        columnNumber: 21
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                        onClick: handleConfirm,
-                                                        children: "confirm"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/app/(home)/admin/page.tsx",
-                                                        lineNumber: 127,
-                                                        columnNumber: 21
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                        onClick: handleCancel,
-                                                        children: "cancel"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/app/(home)/admin/page.tsx",
-                                                        lineNumber: 128,
-                                                        columnNumber: 21
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/app/(home)/admin/page.tsx",
-                                                lineNumber: 125,
-                                                columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
@@ -373,6 +345,57 @@ const AdminPage = ()=>{
                     fileName: "[project]/app/(home)/admin/page.tsx",
                     lineNumber: 102,
                     columnNumber: 9
+                }, this),
+                confirmModal && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "fixed inset-0 flex items-center justify-center bg-black bg-opacity-50",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "bg-white p-6 rounded-lg shadow-lg",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "mb-4",
+                                children: "Are you sure you want to delete this student?"
+                            }, void 0, false, {
+                                fileName: "[project]/app/(home)/admin/page.tsx",
+                                lineNumber: 132,
+                                columnNumber: 15
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex justify-end gap-2",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        onClick: handleConfirm,
+                                        className: "bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded",
+                                        children: "Confirm"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/(home)/admin/page.tsx",
+                                        lineNumber: 134,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        onClick: handleCancel,
+                                        className: "bg-gray-300 hover:bg-gray-400 px-4 py-2 rounded",
+                                        children: "Cancel"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/(home)/admin/page.tsx",
+                                        lineNumber: 140,
+                                        columnNumber: 17
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/(home)/admin/page.tsx",
+                                lineNumber: 133,
+                                columnNumber: 15
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/(home)/admin/page.tsx",
+                        lineNumber: 131,
+                        columnNumber: 13
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/app/(home)/admin/page.tsx",
+                    lineNumber: 130,
+                    columnNumber: 11
                 }, this)
             ]
         }, void 0, true, {
@@ -386,7 +409,7 @@ const AdminPage = ()=>{
         columnNumber: 5
     }, this);
 };
-_s(AdminPage, "OyUSvRsGA6PavBjF7+B7701Atj4=");
+_s(AdminPage, "5Idqc6VXsILYlFuHj/fBskfl2nE=");
 _c = AdminPage;
 const __TURBOPACK__default__export__ = AdminPage;
 var _c;

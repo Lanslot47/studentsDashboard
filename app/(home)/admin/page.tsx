@@ -6,8 +6,8 @@ import AuthGuard from "../components/AuthGuard";
 const AdminPage = () => {
   const [students, setStudents] = useState<any[]>([]);
   const [newStudent, setNewStudent] = useState({ id: "", name: "", age: "", class: "" });
-  const [confirmModal, setComfirmModal] = useState(false);
-  const [itemToDel, setItemTodel] = useState<string | null>(null)
+  const [confirmModal, setConfirmModal] = useState(false);
+  const [itemToDel, setItemToDel] = useState<string | null>(null);
 
   const fetchStudents = async () => {
     const res = await databases.listDocuments(databaseId, studentsCollectionId);
@@ -22,39 +22,39 @@ const AdminPage = () => {
     fetchStudents();
     setNewStudent({ id: "", name: "", age: "", class: "" });
   };
-  // const ogDelete = async () => {
-  //   alert("Show want to delete");
-  //   deleteStudent(docId:)
-  // }
+
   const deleteStudent = async (docId: string) => {
     await databases.deleteDocument(databaseId, studentsCollectionId, docId);
     fetchStudents();
   };
+
   const confirmDel = (docId: string) => {
-    setItemTodel(docId);
-    setComfirmModal(true)
-  }
+    setItemToDel(docId);
+    setConfirmModal(true);
+  };
+
   const handleConfirm = () => {
-    if (itemToDel !== null && typeof itemToDel === 'string') {
+    if (itemToDel) {
       deleteStudent(itemToDel);
-      setComfirmModal(false);
-      setItemTodel(null)
+      setConfirmModal(false);
+      setItemToDel(null);
     }
+  };
 
-  }
   const handleCancel = () => {
-    setComfirmModal(false)
-    setItemTodel(null)
-  }
-
+    setConfirmModal(false);
+    setItemToDel(null);
+  };
 
   const updateStudent = async (docId: string) => {
     await databases.updateDocument(databaseId, studentsCollectionId, docId, {
-      name: newStudent.name,
-      class: newStudent.class,
       id: newStudent.id,
+      name: newStudent.name,
+      age: Number(newStudent.age),
+      class: newStudent.class,
     });
     fetchStudents();
+    setNewStudent({ id: "", name: "", age: "", class: "" });
   };
 
   useEffect(() => {
@@ -116,22 +116,37 @@ const AdminPage = () => {
                   Update
                 </button>
                 <button
-                  onClick={() => deleteStudent(s.$id)}
+                  onClick={() => confirmDel(s.$id)}
                   className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded"
                 >
                   Delete
                 </button>
-                {confirmModal && (
-                  <div>
-                    <p>show want to del item</p>
-                    <button onClick={handleConfirm}>confirm</button>
-                    <button onClick={handleCancel}>cancel</button>
-                  </div>)
-                }
               </div>
             </div>
           ))}
         </div>
+
+        {confirmModal && (
+          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <p className="mb-4">Are you sure you want to delete this student?</p>
+              <div className="flex justify-end gap-2">
+                <button
+                  onClick={handleConfirm}
+                  className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded"
+                >
+                  Confirm
+                </button>
+                <button
+                  onClick={handleCancel}
+                  className="bg-gray-300 hover:bg-gray-400 px-4 py-2 rounded"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </AuthGuard>
   );

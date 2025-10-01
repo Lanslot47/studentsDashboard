@@ -11,12 +11,23 @@ const adminAuth = () => {
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            await account.createEmailPasswordSession(email, password);
-            if (email === "school@gmail.com") {
-                router.push("/admin");
-            } else {
-                setError("Incorrect Info")
+            const checkM = await account.get()
+            if (checkM) {
+                if (email === "school@gmail.com") {
+                    router.push("/admin");
+                } else {
+                    setError("Incorrect Info")
+                }
             }
+            else {
+                await account.createEmailPasswordSession(email, password);
+                if (email === "school@gmail.com") {
+                    router.push("/admin");
+                } else {
+                    setError("Incorrect Info")
+                }
+            }
+
         } catch (error: any) {
             setError(error.message);
         }

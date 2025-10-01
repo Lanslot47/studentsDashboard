@@ -4,10 +4,10 @@ import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 
 const Navbar = () => {
-    const links= [ 
-        {id: 1, title: "Home", url: "/home"},
-        {id: 2, title: "About", url: "/about"},
-        {id: 3, title: "Gallery", url: "/gallery"},
+    const links = [
+        { id: 1, title: "Home", url: "/home" },
+        { id: 2, title: "About", url: "/about" },
+        { id: 3, title: "Gallery", url: "/gallery" },
     ]
     const [showDropDown, setShowDropDown] = useState(false);
     return (
