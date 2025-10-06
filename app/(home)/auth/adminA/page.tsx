@@ -11,9 +11,9 @@ const adminAuth = () => {
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            const checkM = await account.get()
-            if (checkM) {
-                if (email === "school@gmail.com") {
+            if (email && password) {
+                const checkM = await account.get()
+                if (checkM && email === "school@gmail.com") {
                     router.push("/admin");
                 } else {
                     setError("Incorrect Info")
