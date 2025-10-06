@@ -1,8 +1,9 @@
-"use client"
+"use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { account } from "@/app/lib/appwrite";
-const adminAuth = () => {
+
+const AdminAuth = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -10,28 +11,29 @@ const adminAuth = () => {
 
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
-        try {
-            if (email && password) {
-                const checkM = await account.get()
-                if (checkM && email === "school@gmail.com") {
-                    router.push("/admin");
-                } else {
-                    setError("Incorrect Info")
-                }
-            }
-            else {
-                await account.createEmailPasswordSession(email, password);
-                if (email === "school@gmail.com") {
-                    router.push("/admin");
-                } else {
-                    setError("Incorrect Info")
-                }
-            }
+        setError("");
 
-        } catch (error: any) {
-            setError(error.message);
+        try {
+            let currentUser;
+            try {
+                currentUser = await account.get();
+            } catch {
+                currentUser = null;
+            }
+            if (!currentUser) {
+                await account.createEmailPasswordSession(email, password);
+            }
+            const user = await account.get();
+            if (user.email === "school@gmail.com") {
+                router.push("/admin");
+            } else {
+                setError("Incorrect Info");
+            }
+        } catch (err: any) {
+            setError(err.message);
         }
     };
+
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-50 p-5">
             <form
@@ -77,12 +79,12 @@ const adminAuth = () => {
                     >
                         Login
                     </button>
-
                 </div>
 
                 {error && <p className="text-red-500 text-sm text-center">{error}</p>}
             </form>
         </div>
-    )
-}
-export default adminAuth
+    );
+};
+
+export default AdminAuth;
